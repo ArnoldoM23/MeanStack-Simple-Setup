@@ -1,0 +1,10 @@
+to create a database with mongodb we will do it in the terminal. First make sure you have mongo and and mongodb installed " $ npm i -S mongodb, if you have brew installed use $ brew install mongo " as dependencies and you can install mongo -g globaly if "you want may need to sudo". If you have problems installing copy and paste problem in couple and you will find answer. Once you have them both installed first run the commad $ mongod. It will start the server and wait for a connection. On another tab run the command $ mongo. It will open the mongo shell, and your mongo server will have connected. To create a db run the command use nameOfDB. use will either switch to database and if the db does not exist it will create one. Once you run the command you should see the switched to db nameOfDB, you run db to check the db your in. In mongo tables are called collections so to create a collection you need to run the command db.nameOfCollection.inset({obj with the properties you want to create}) it will also give all your obj and objectid to keep track of them. Once you run the command you will see WriteResult({ "nInserted" : 1 }) meaning you insered one obj. This is the basic example of creating a mongo db.
+
+once connected run mongo in the command line in the mongo shell run this example if you want.
+
+use MVP //creates database.
+
+db.users.insert({name: "Charlie""}) // this will create the collection or insert into your collection
+
+db.users.find() // will display whats in your db.
+
