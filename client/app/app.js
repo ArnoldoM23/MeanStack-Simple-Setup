@@ -7,15 +7,18 @@ angular.module('Notify',["ui.router"])
 // 	$stateProvider has a state property so you can set your state options, it takes two paramater a name of the state it can be banana and object. The object takes a url property and the url as a value. A templateUrl propety with the path to the static file.
 	$stateProvider
 	// the state will go on the html that you want route the user.
-	.state('names', {
-		url: '/names',
-		templateUrl: 'app/login/login.html'
+	.state('home', {
+		url: '/home',
+		templateUrl: 'app/home/home.html',
+		resolve: {
+			userService: function($http){
+				return $http.get('/home');
+			}
+		},
+		controller: function($scope, userService, $location){
+				
+		},
+		controllerAs: 'HomeController'
 	});
-})
+});
 // the controller will tak
-.controller('HomeController', function($scope, $http){
-	// 
-	$http.get('/names').then(function(response){
-		$scope.testing = response.data;
-	});
-})
