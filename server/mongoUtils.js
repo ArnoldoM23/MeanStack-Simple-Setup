@@ -1,9 +1,10 @@
+// require dependencies.
 var mongoose = require('mongoose'),
     bcrypt   = require('bcrypt-nodejs'),
     Q        = require('q'),
     SALT_WORK_FACTOR = 10;
 
-// export the connection and the database.
+// below is an example of a Schema for mongo using mongoose.
 var UserSchema = new mongoose.Schema({
 		username: {
 			type: String,
@@ -22,5 +23,5 @@ var UserSchema = new mongoose.Schema({
 		},
 		salt: String
 });
-
+// create a model of your schema and export it.
 module.exports = mongoose.model('users', UserSchema);

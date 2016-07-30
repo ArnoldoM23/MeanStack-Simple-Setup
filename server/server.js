@@ -12,8 +12,12 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client'));
 
 
-app.get('/names', function(req, res){
+app.get('/home', function(req, res){
 	app.send('hello world')
+});
+
+app.get('/login', function(req, res){
+	app.send('your login in')
 });
 // listen for connection
 app.listen(8000, function(){
